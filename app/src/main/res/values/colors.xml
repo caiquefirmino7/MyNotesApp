@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="limeGreen">#46A65E</color>
+    <color name="forestGreen">#4BA66A</color>
+    <color name="forestNight">#207344</color>
+    <color name="deepForestNight">#195935</color>
+</resources>
