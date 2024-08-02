@@ -1,5 +1,33 @@
 # MyNotesApp
 
+## Demonstração do Projeto
+
+Aqui está uma demonstração do aplicativo em funcionamento:
+
+<p align="center">
+  <a href="https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/video.mp4" target="_blank">
+    <img src="https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/video.mp4" alt="Demonstração do Projeto" style="max-width:100%;"/>
+  </a>
+</p>
+
+## Capturas de Tela
+
+### Tela de Splash Screen
+
+![Tela de Splash Screen](https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/splashscreen.png)
+
+### Tela Inicial
+
+![Tela Inicial](https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/telainicial.jpeg)
+
+### Criar Nota
+
+![Criar Nota](https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/criarnota.jpeg)
+
+### Notas
+
+![Notas](https://github.com/caiquefirmino7/MyNotesApp/blob/master/drawable/notas.jpeg)
+
 ## Sobre o Projeto
 
 Este aplicativo foi desenvolvido para simplificar o gerenciamento de notas pessoais, permitindo um controle rápido e eficaz através de uma interface fácil e moderna. O MyNotesApp oferece funcionalidades para criar, editar, excluir e visualizar notas, com suporte para organização e filtragem.
