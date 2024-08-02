@@ -48,26 +48,30 @@ manifests # Configurações do projeto.
    git clone https://github.com/caiquefirmino7/MyNotesApp.git
    
 
-   ## Imagens e Vídeo
+  ## Imagens e Vídeo
 
 ### Vídeo
 
-![Video](app/src/main/res/assets/video.mp4)
+<video width="600" controls>
+  <source src="app/src/main/res/assets/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### Capturas de Tela
 
 - **Splash Screen**:
 
-  ![Splash Screen](app/src/main/res/assets/splashscreen.png)
+  <img src="app/src/main/res/assets/splashscreen.png" width="300" alt="Splash Screen">
 
 - **Tela Inicial**:
 
-  ![Tela Inicial](app/src/main/res/assets/telainicial.jpeg)
+  <img src="app/src/main/res/assets/telainicial.jpeg" width="300" alt="Tela Inicial">
 
 - **Criar Nota**:
 
-  ![Criar Nota](app/src/main/res/assets/criarnota.jpeg)
+  <img src="app/src/main/res/assets/criarnota.jpeg" width="300" alt="Criar Nota">
 
 - **Notas**:
 
-  ![Notas](app/src/main/res/assets/notas.jpeg)
+  <img src="app/src/main/res/assets/notas.jpeg" width="300" alt="Notas">
+
