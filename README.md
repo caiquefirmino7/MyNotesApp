@@ -51,29 +51,24 @@ manifests # Configurações do projeto.
 
 ### Capturas de Tela
 
-<div style="border: 2px solid #ddd; padding: 10px; margin: 10px;">
+<div style="display: flex; justify-content: center; gap: 10px;">
 
-  <div style="display: flex; justify-content: center; gap: 10px;">
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/splashscreen.png" width="200" alt="Splash Screen">
+  </div>
 
-    <div style="border: 2px solid #ddd; padding: 5px;">
-      <img src="app/src/main/res/assets/splashscreen.png" width="200" alt="Splash Screen">
-    </div>
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/telainicial.jpeg" width="200" alt="Tela Inicial">
+  </div>
 
-    <div style="border: 2px solid #ddd; padding: 5px;">
-      <img src="app/src/main/res/assets/telainicial.jpeg" width="200" alt="Tela Inicial">
-    </div>
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/criarnota.jpeg" width="200" alt="Criar Nota">
+  </div>
 
-    <div style="border: 2px solid #ddd; padding: 5px;">
-      <img src="app/src/main/res/assets/criarnota.jpeg" width="200" alt="Criar Nota">
-    </div>
-
-    <div style="border: 2px solid #ddd; padding: 5px;">
-      <img src="app/src/main/res/assets/notas.jpeg" width="200" alt="Notas">
-    </div>
-
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/notas.jpeg" width="200" alt="Notas">
   </div>
 
 </div>
-
 
 
