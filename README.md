@@ -48,33 +48,29 @@ manifests # Configurações do projeto.
    git clone https://github.com/caiquefirmino7/MyNotesApp.git
    
 
-  ## Imagens e Vídeo
 
-### Vídeo
+### Capturas de Tela do projeto
 
-<video width="600" controls>
-  <source src="app/src/main/res/assets/video.mp4" type="video/mp4">
-  Seu navegador não suporta a tag de vídeo.
-</video>
+<div style="border: 2px solid #ddd; padding: 10px; margin: 10px;">
 
-### Capturas de Tela
+  <div style="display: flex; justify-content: center; gap: 10px;">
 
-<div style="display: flex; justify-content: center; gap: 10px;">
+    <div style="border: 2px solid #ddd; padding: 5px;">
+      <img src="app/src/main/res/assets/splashscreen.png" width="200" alt="Splash Screen">
+    </div>
 
-  <div style="border: 2px solid #ddd; padding: 5px;">
-    <img src="app/src/main/res/assets/splashscreen.png" width="200" alt="Splash Screen">
-  </div>
+    <div style="border: 2px solid #ddd; padding: 5px;">
+      <img src="app/src/main/res/assets/telainicial.jpeg" width="200" alt="Tela Inicial">
+    </div>
 
-  <div style="border: 2px solid #ddd; padding: 5px;">
-    <img src="app/src/main/res/assets/telainicial.jpeg" width="200" alt="Tela Inicial">
-  </div>
+    <div style="border: 2px solid #ddd; padding: 5px;">
+      <img src="app/src/main/res/assets/criarnota.jpeg" width="200" alt="Criar Nota">
+    </div>
 
-  <div style="border: 2px solid #ddd; padding: 5px;">
-    <img src="app/src/main/res/assets/criarnota.jpeg" width="200" alt="Criar Nota">
-  </div>
+    <div style="border: 2px solid #ddd; padding: 5px;">
+      <img src="app/src/main/res/assets/notas.jpeg" width="200" alt="Notas">
+    </div>
 
-  <div style="border: 2px solid #ddd; padding: 5px;">
-    <img src="app/src/main/res/assets/notas.jpeg" width="200" alt="Notas">
   </div>
 
 </div>
