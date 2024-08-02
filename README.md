@@ -49,7 +49,7 @@ manifests # Configurações do projeto.
    
 
 
-### Capturas de Tela do projeto
+### Capturas de Tela
 
 <div style="border: 2px solid #ddd; padding: 10px; margin: 10px;">
 
@@ -74,5 +74,6 @@ manifests # Configurações do projeto.
   </div>
 
 </div>
+
 
 
