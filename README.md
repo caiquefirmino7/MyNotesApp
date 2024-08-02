@@ -54,24 +54,29 @@ manifests # Configurações do projeto.
 
 <video width="600" controls>
   <source src="app/src/main/res/assets/video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Seu navegador não suporta a tag de vídeo.
 </video>
 
 ### Capturas de Tela
 
-- **Splash Screen**:
+<div style="display: flex; justify-content: center; gap: 10px;">
 
-  <img src="app/src/main/res/assets/splashscreen.png" width="300" alt="Splash Screen">
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/splashscreen.png" width="200" alt="Splash Screen">
+  </div>
 
-- **Tela Inicial**:
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/telainicial.jpeg" width="200" alt="Tela Inicial">
+  </div>
 
-  <img src="app/src/main/res/assets/telainicial.jpeg" width="300" alt="Tela Inicial">
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/criarnota.jpeg" width="200" alt="Criar Nota">
+  </div>
 
-- **Criar Nota**:
+  <div style="border: 2px solid #ddd; padding: 5px;">
+    <img src="app/src/main/res/assets/notas.jpeg" width="200" alt="Notas">
+  </div>
 
-  <img src="app/src/main/res/assets/criarnota.jpeg" width="300" alt="Criar Nota">
+</div>
 
-- **Notas**:
-
-  <img src="app/src/main/res/assets/notas.jpeg" width="300" alt="Notas">
 
