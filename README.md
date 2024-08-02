@@ -46,3 +46,28 @@ manifests # Configurações do projeto.
 1. **Clone o Repositório**
    ```bash
    git clone https://github.com/caiquefirmino7/MyNotesApp.git
+   
+
+   ## Imagens e Vídeo
+
+### Vídeo
+
+![Video](app/src/main/res/assets/video.mp4)
+
+### Capturas de Tela
+
+- **Splash Screen**:
+
+  ![Splash Screen](app/src/main/res/assets/splashscreen.png)
+
+- **Tela Inicial**:
+
+  ![Tela Inicial](app/src/main/res/assets/telainicial.jpeg)
+
+- **Criar Nota**:
+
+  ![Criar Nota](app/src/main/res/assets/criarnota.jpeg)
+
+- **Notas**:
+
+  ![Notas](app/src/main/res/assets/notas.jpeg)
