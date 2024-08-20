@@ -72,35 +72,35 @@ class NoteCreation : AppCompatActivity() {
     }
 
     private fun saveNote() {
-        val title = binding.createNoteTitle.text.toString()
-        val description = binding.createNoteDesc.text.toString()
-
-        if (title.isBlank() || description.isBlank()) {
-            Toast.makeText(this, "Os campos devem conter um Título e uma Nota!", Toast.LENGTH_SHORT)
-                .show()
-            return
-        }
-        val currentTime = System.currentTimeMillis()
-        val newNote = NoteEntity(
-            id = noteId,
-            title = title,
-            description = description,
-            timeStamp = if (noteId == 0L) currentTime else note.timeStamp,
-            lastModified = currentTime
-        )
-        CoroutineScope(Dispatchers.IO).launch {
-            if (noteId != 0L) {
-                noteRepository.update(newNote)
-            } else {
-                noteRepository.insert(newNote)
-            }
-            withContext(Dispatchers.Main) {
-                binding.createNoteTitle.text.clear()
-                binding.createNoteDesc.text.clear()
-                Toast.makeText(this@NoteCreation, "Nota Salva com sucesso!", Toast.LENGTH_SHORT)
-                    .show()
-                finish()
-            }
-        }
+//        val title = binding.createNoteTitle.text.toString()
+//        val description = binding.createNoteDesc.text.toString()
+//
+//        if (title.isBlank() || description.isBlank()) {
+//            Toast.makeText(this, "Os campos devem conter um Título e uma Nota!", Toast.LENGTH_SHORT)
+//                .show()
+//            return
+//        }
+//        val currentTime = System.currentTimeMillis()
+//        val newNote = NoteEntity(
+//            id = noteId,
+//            title = title,
+//            description = description,
+//            timeStamp = if (noteId == 0L) currentTime else note.timeStamp,
+//            lastModified = currentTime
+//        )
+//        CoroutineScope(Dispatchers.IO).launch {
+//            if (noteId != 0L) {
+//                noteRepository.update(newNote)
+//            } else {
+//                noteRepository.insert(newNote)
+//            }
+//            withContext(Dispatchers.Main) {
+//                binding.createNoteTitle.text.clear()
+//                binding.createNoteDesc.text.clear()
+//                Toast.makeText(this@NoteCreation, "Nota Salva com sucesso!", Toast.LENGTH_SHORT)
+//                    .show()
+//                finish()
+//            }
+//        }
     }
 }

@@ -13,15 +13,21 @@
         android:theme="@style/Theme.MyNotes"
         tools:targetApi="31">
         <activity
+            android:name=".ui.UserRegister"
+            android:exported="false" />
+        <activity
+            android:name=".ui.UserLogin"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.MyNotes.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.DetailNotes"
             android:exported="false" />
@@ -29,7 +35,7 @@
             android:name=".ui.NoteCreation"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.NoteList"
             android:exported="false" />
 
         <meta-data

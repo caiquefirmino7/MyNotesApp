@@ -7,13 +7,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.caique.mynotes.dao.NoteDao
+import com.caique.mynotes.dao.UserDao
 import com.caique.mynotes.model.NoteEntity
+import com.caique.mynotes.model.UserEntity
 
 
-@Database(entities = [NoteEntity::class], version = 4)
+@Database(entities = [NoteEntity::class, UserEntity::class], version = 1, exportSchema = true)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
@@ -26,7 +29,6 @@ abstract class NotesDatabase : RoomDatabase() {
                     NotesDatabase::class.java,
                     "note_database"
                 )
-                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
                 instance
