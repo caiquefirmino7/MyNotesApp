@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bem-vindo"
+            android:textColor="@color/darkBlue"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:textColorHint="@color/lightBlue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/activity_login_title">
@@ -48,6 +50,7 @@
                 android:id="@+id/activity_login_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/blue_border"
                 android:hint="Usuario"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -58,6 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:textColorHint="@color/lightBlue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textInputLayout_user">
@@ -66,6 +70,7 @@
                 android:id="@+id/activity_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/blue_border"
                 android:hint="Senha"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +92,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             android:text="Cadastrar Usuario"
-            android:textColor="@color/forestGreen"
+            android:textColor="@color/lightBlue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

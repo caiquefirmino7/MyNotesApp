@@ -2,6 +2,7 @@ package com.caique.mynotes.extensions
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 
 fun Context.goTo(clazz: Class<*>, intent: Intent.() -> Unit = {}) {
     Intent(this, clazz)
@@ -9,4 +10,12 @@ fun Context.goTo(clazz: Class<*>, intent: Intent.() -> Unit = {}) {
             intent()
             startActivity(this)
         }
+}
+
+fun Context.toast(message: String){
+    Toast.makeText(
+        this,
+        message,
+        Toast.LENGTH_SHORT
+    ).show()
 }

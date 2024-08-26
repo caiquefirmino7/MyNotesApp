@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/menu_create_save_note"
         android:icon="@drawable/iconsave"
-        android:title="Salvar" />
+        android:iconTint="@color/darkBlue"
+        app:showAsAction="always"
+        tools:ignore="MenuTitle" />
 </menu>

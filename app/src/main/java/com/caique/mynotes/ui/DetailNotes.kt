@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -16,16 +15,17 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.caique.mynotes.R
 import com.caique.mynotes.databinding.ActivityDetailNotesBinding
+import com.caique.mynotes.extensions.toast
 import com.caique.mynotes.model.NoteEntity
 import com.caique.mynotes.repository.NoteRepository
 import com.caique.mynotes.repository.NoteRepositorySingleton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.reflect.Method
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.lang.reflect.Method
 
 @Suppress("DEPRECATION")
 class DetailNotes : AppCompatActivity() {
@@ -36,34 +36,16 @@ class DetailNotes : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailNotesBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
-        setContentView(binding.root)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.forestGreen)
-        val insetsController = ViewCompat.getWindowInsetsController(window.decorView)
-        insetsController?.isAppearanceLightStatusBars = false
-
-        noteRepository = NoteRepositorySingleton.getRepository(this)
-
-        val noteDetail = intent.getParcelableExtra<NoteEntity>("note")
-        noteDetail?.let {
-            note = it
-            updateNoteDetails(it)
-        }
+        initializeBinding()
+        setupUI()
+        initializeRepository()
+        handleIntent()
         configureWindowInsets()
     }
 
-    private fun configureWindowInsets() {
-        ViewCompat.setOnApplyWindowInsetsListener(binding.detailRoot) { v, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
-                systemBarsInsets.left,
-                systemBarsInsets.top,
-                systemBarsInsets.right,
-                systemBarsInsets.bottom
-            )
-            insets
-        }
+    override fun onResume() {
+        super.onResume()
+        updateNote()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -87,40 +69,40 @@ class DetailNotes : AppCompatActivity() {
         }
     }
 
-    private fun editNote() {
-        Intent(this, NoteCreation::class.java).apply {
-            putExtra("note", note)
-            startActivity(this)
+    private fun initializeBinding() {
+        binding = ActivityDetailNotesBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
+        setContentView(binding.root)
+    }
+
+    private fun setupUI() {
+        window.statusBarColor = ContextCompat.getColor(this, R.color.lightBlue)
+        val insetsController = ViewCompat.getWindowInsetsController(window.decorView)
+        insetsController?.isAppearanceLightStatusBars = false
+    }
+
+    private fun initializeRepository() {
+        noteRepository = NoteRepositorySingleton.getRepository(this)
+    }
+
+    private fun handleIntent() {
+        intent.getParcelableExtra<NoteEntity>("note")?.let {
+            note = it
+            updateNoteDetails(it)
         }
     }
 
-    private fun showDeleteConfirmationDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Confirmar exclusão")
-            .setMessage("Tem certeza que deseja excluir esta nota?")
-            .setPositiveButton("Excluir") { dialog, _ ->
-                deleteNote()
-                dialog.dismiss()
-            }
-            .setNegativeButton("Cancelar") { dialog, _ ->
-                dialog.dismiss()
-            }
-            .show()
-    }
-
-    private fun deleteNote() {
-        lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                noteRepository.delete(note)
-            }
-            finish()
-            Toast.makeText(this@DetailNotes, "Nota removida com sucesso!", Toast.LENGTH_SHORT).show()
+    private fun configureWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.detailRoot) { v, insets ->
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                systemBarsInsets.left,
+                systemBarsInsets.top,
+                systemBarsInsets.right,
+                systemBarsInsets.bottom
+            )
+            insets
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        updateNote()
     }
 
     private fun updateNote() {
@@ -155,7 +137,36 @@ class DetailNotes : AppCompatActivity() {
         }
     }
 
+    private fun editNote() {
+        Intent(this, NoteCreation::class.java).apply {
+            putExtra("note", note)
+            startActivity(this)
+        }
+    }
 
+    private fun showDeleteConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Confirmar exclusão")
+            .setMessage("Tem certeza que deseja excluir esta nota?")
+            .setPositiveButton("Excluir") { dialog, _ ->
+                deleteNote()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancelar") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun deleteNote() {
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
+                noteRepository.delete(note)
+            }
+            finish()
+            toast("Nota removida com sucesso!")
+        }
+    }
 
     private fun enableIconsInOverflowMenu(menu: Menu) {
         try {

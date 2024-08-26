@@ -1,5 +1,6 @@
 package com.caique.mynotes.recyclerview.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -50,39 +51,56 @@ class NoteListAdapter(
             with(binding) {
                 noteTitle.text = currentItem.title
                 noteDesc.text = currentItem.description
-
-                val creationDateString = dateFormat.format(currentItem.timeStamp)
                 noteDateIcon.setImageResource(R.drawable.ic_date)
-                noteDataCreated.text = creationDateString
 
-                val modificationDateString = if (currentItem.lastModified > currentItem.timeStamp) {
-                    "Última Modificação: ${dateFormat.format(currentItem.lastModified)}"
-                } else {
-                    ""
-                }
-                noteDataModified.text = modificationDateString
+                noteDataCreated.text = formatDate(currentItem.timeStamp)
+                noteDataModified.text = formatLastModified(currentItem)
 
                 cardViewNoteItem.setOnClickListener {
-                    val context = it.context
-                    val intent = Intent(context, DetailNotes::class.java).apply {
-                        putExtra("note", currentItem)
-                    }
-                    context.startActivity(intent)
+                    navigateToDetail(it.context, currentItem)
                 }
 
                 cardViewNoteItem.setOnLongClickListener {
-                    val menuItems = arrayOf("Editar", "Excluir")
-                    android.app.AlertDialog.Builder(it.context)
-                        .setItems(menuItems) { _, which ->
-                            when (which) {
-                                0 -> clickToEdit(currentItem)
-                                1 -> clickToRemove(currentItem)
-                            }
-                        }
-                        .show()
+                    showContextMenu(it.context, currentItem, clickToEdit, clickToRemove)
                     true
                 }
             }
+        }
+
+        private fun formatDate(timestamp: Long): String {
+            return dateFormat.format(timestamp)
+        }
+
+        private fun formatLastModified(note: NoteEntity): String {
+            return if (note.lastModified > note.timeStamp) {
+                "Última Modificação: ${dateFormat.format(note.lastModified)}"
+            } else {
+                ""
+            }
+        }
+
+        private fun navigateToDetail(context: Context, note: NoteEntity) {
+            val intent = Intent(context, DetailNotes::class.java).apply {
+                putExtra("note", note)
+            }
+            context.startActivity(intent)
+        }
+
+        private fun showContextMenu(
+            context: Context,
+            note: NoteEntity,
+            clickToEdit: (NoteEntity) -> Unit,
+            clickToRemove: (NoteEntity) -> Unit
+        ) {
+            val menuItems = arrayOf("Editar", "Excluir")
+            android.app.AlertDialog.Builder(context)
+                .setItems(menuItems) { _, which ->
+                    when (which) {
+                        0 -> clickToEdit(note)
+                        1 -> clickToRemove(note)
+                    }
+                }
+                .show()
         }
     }
 

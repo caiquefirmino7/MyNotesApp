@@ -13,5 +13,5 @@ data class NoteEntity(
     val description: String,
     val timeStamp: Long = System.currentTimeMillis(),
     val lastModified: Long = System.currentTimeMillis(),
-    val userId: String
+    val userId: String? = null
 ) : Parcelable

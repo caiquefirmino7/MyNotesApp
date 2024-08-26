@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.caique.mynotes.databinding.ActivitySplashScreenBinding
+import com.caique.mynotes.extensions.goTo
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -19,17 +20,28 @@ class SplashScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initializeBinding()
+        configureWindowInsets()
+        startMainActivityAfterDelay()
+    }
+
+    private fun initializeBinding() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        configureWindowInsets()
+    }
 
+    private fun startMainActivityAfterDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
             if (!isFinishing) {
-                startActivity(Intent(this, UserLogin::class.java))
-                finish()
+                navigateToNoteList()
             }
         }, splashTimeout)
+    }
+
+    private fun navigateToNoteList() {
+        goTo(NoteList::class.java)
+        finish()
     }
 
     private fun configureWindowInsets() {

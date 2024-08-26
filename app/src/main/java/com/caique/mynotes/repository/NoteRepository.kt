@@ -1,11 +1,13 @@
 package com.caique.mynotes.repository
+
 import com.caique.mynotes.dao.NoteDao
 import com.caique.mynotes.model.NoteEntity
+import kotlinx.coroutines.flow.Flow
 
 class NoteRepository(private val noteDao: NoteDao) {
 
-    suspend fun getAllNotes(): List<NoteEntity> {
-        return noteDao.searchAll()
+    fun getNotesByUser(userId: String): Flow<List<NoteEntity>> {
+        return noteDao.searchAllByUser(userId)
     }
 
     suspend fun insert(note: NoteEntity) {

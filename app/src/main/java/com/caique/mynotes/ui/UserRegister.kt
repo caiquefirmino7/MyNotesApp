@@ -2,7 +2,6 @@ package com.caique.mynotes.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -10,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.caique.mynotes.R
 import com.caique.mynotes.databinding.ActivityUserRegisterBinding
+import com.caique.mynotes.extensions.toast
 import com.caique.mynotes.model.UserEntity
 import com.caique.mynotes.repository.UserRepository
 import com.caique.mynotes.repository.UserRepositorySingleton
@@ -18,44 +18,50 @@ import kotlinx.coroutines.launch
 class UserRegister : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserRegisterBinding
-   private lateinit var userRepository: UserRepository
+    private lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initializeBinding()
+        configureWindowInsets()
+        initializeRepository()
+        setupUI()
+    }
+
+    private fun initializeBinding() {
         binding = ActivityUserRegisterBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+    }
 
-        userRepository = UserRepositorySingleton.getRepository(this@UserRegister)
-
+    private fun configureWindowInsets() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                systemBarsInsets.left,
+                systemBarsInsets.top,
+                systemBarsInsets.right,
+                systemBarsInsets.bottom
+            )
             insets
         }
-        configButtonRegister()
     }
 
-    private fun configButtonRegister() {
+    private fun initializeRepository() {
+        userRepository = UserRepositorySingleton.getRepository(this)
+    }
 
+    private fun setupUI() {
+        configureRegisterButton()
+    }
+
+    private fun configureRegisterButton() {
         binding.activityRegistrationFormButtonRegister.setOnClickListener {
             val newUser = createNewUser()
-            Log.i("cadastroUsuario", "onCreate: $newUser")
-            lifecycleScope.launch {
-                try {
-                    userRepository.insertUser(newUser)
-                    finish()
-                } catch (e: Exception) {
-                    Toast.makeText(
-                        this@UserRegister,
-                        "Falha ao cadastrar usuário!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+            Log.i("UserRegister", "New User: $newUser")
+            registerUser(newUser)
         }
     }
-
 
     private fun createNewUser(): UserEntity {
         with(binding) {
@@ -67,6 +73,17 @@ class UserRegister : AppCompatActivity() {
                 name = name,
                 password = password
             )
+        }
+    }
+
+    private fun registerUser(newUser: UserEntity) {
+        lifecycleScope.launch {
+            try {
+                userRepository.insertUser(newUser)
+                finish()
+            } catch (e: Exception) {
+                toast("Falha ao cadastrar usuário!")
+            }
         }
     }
 }
