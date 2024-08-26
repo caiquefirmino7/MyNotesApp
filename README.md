@@ -22,11 +22,11 @@ manifests # Configurações do projeto.
 
 - **Room**: Biblioteca para persistência de dados que utiliza SQLite para armazenar informações localmente no dispositivo.
 
-- - **SQLite**: Banco de dados relacional utilizado em conjunto com o Room para armazenamento de dados persistentes.
+-  **SQLite**: Banco de dados relacional utilizado em conjunto com o Room para armazenamento de dados persistentes.
 
 - **Data Binding**: Facilita a vinculação das views utilizadas nos layouts (ConstraintLayout).
   
-- - **DataStore**: Solução para armazenamento de preferências e configurações do usuário..
+-  **DataStore**: Solução para armazenamento de preferências e configurações do usuário..
 
 - **Coroutines**: Utilizadas para realizar operações assíncronas, garantindo que as operações do banco de dados sejam realizadas em threads separadas da principal.
 
