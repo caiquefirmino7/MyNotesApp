@@ -3,7 +3,7 @@
 
 ## Sobre o Projeto
 
-Este aplicativo foi desenvolvido para simplificar o gerenciamento de notas pessoais, permitindo um controle rápido e eficaz através de uma interface fácil e moderna. O MyNotesApp oferece funcionalidades para criar, editar, excluir e visualizar notas, com suporte para organização e filtragem.
+Este aplicativo foi desenvolvido para simplificar o gerenciamento de notas pessoais, permitindo um controle rápido e eficaz através de uma interface fácil e moderna. O MyNotesApp oferece funcionalidades para criar, editar, excluir e visualizar notas, com suporte para organização e filtragem com  gerenciamento de usuários, permitindo que cada usuário tenha suas próprias notas.
 
 ## Estrutura do Projeto
 
@@ -11,9 +11,9 @@ manifests # Configurações do projeto.
 /java # Código-fonte principal do aplicativo.
 /database # Implementação do Banco de dados.
 /extensions # Funções de extensão em Kotlin para conversão de tipos de dados.
+/preferences # Implementação do DataStore para armazenamento de preferências do usuário.
 /model # Entidades.
-/ui # Interfaces do usuário.
-/tests # Testes automatizados, garantindo a qualidade.
+/ui # Activities.
 /res # Layouts, imagens, fontes, menus, etc.
 
 ## Tecnologias Utilizadas
@@ -25,6 +25,8 @@ manifests # Configurações do projeto.
 - - **SQLite**: Banco de dados relacional utilizado em conjunto com o Room para armazenamento de dados persistentes.
 
 - **Data Binding**: Facilita a vinculação das views utilizadas nos layouts (ConstraintLayout).
+  
+- - **DataStore**: Solução para armazenamento de preferências e configurações do usuário..
 
 - **Coroutines**: Utilizadas para realizar operações assíncronas, garantindo que as operações do banco de dados sejam realizadas em threads separadas da principal.
 
@@ -39,7 +41,12 @@ manifests # Configurações do projeto.
 - **Gerenciamento de Notas**: Criação, edição, exclusão e visualização de notas.
 - **Organização**: Opções para ordenar notas por data de criação, data de modificação ou ordem alfabética.
 - **Pesquisa**: Filtragem de notas com base em consultas de texto.
+- **Autenticação do Usuário**: Tela de login e cadastro para gerenciar acessos.
+- **Perfil do usuário**: Tela de perfil onde os usuários podem editar seu nome e alterar a senha.
+- **Notas Vinculadas ao Usuário**:: Cada usuário visualiza e gerencia apenas suas próprias notas.
 - **Interface Moderna**: Layouts responsivos e animações para uma experiência de usuário suave.
+- **Armazenamento de Preferências**: Utilização do DataStore para gerenciar preferências e configurações do usuário.
+- **Migrações**: Implementação de migrações para manter a integridade dos dados durante as atualizações do aplicativo.
 
 ## Como Executar
 
