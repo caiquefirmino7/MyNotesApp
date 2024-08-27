@@ -1,6 +1,40 @@
 # MyNotesApp
 
 
+### Capturas de Tela
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/telainicialnota.jpeg" width="150" alt="Tela Inicial Nota">
+    </td>
+    <td align="center">
+      <img src="screenshots/telausuario.jpeg" width="150" alt="Tela Usuário">
+    </td>
+    <td align="center">
+      <img src="screenshots/telacadastro.jpeg" width="150" alt="Tela Cadastro">
+    </td>
+    <td align="center">
+      <img src="screenshots/telacriarnota.jpeg" width="150" alt="Tela Criar Nota">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/teladetalhenota.jpeg" width="150" alt="Tela Detalhe Nota">
+    </td>
+    <td align="center">
+      <img src="screenshots/telanota.jpeg" width="150" alt="Tela Nota">
+    </td>
+    <td align="center">
+      <img src="screenshots/telanotaescolha.jpeg" width="150" alt="Tela Nota Escolha">
+    </td>
+    <td align="center">
+      <img src="screenshots/telaperfil.jpeg" width="150" alt="Tela Perfil">
+    </td>
+  </tr>
+</table>
+
+
 ## Sobre o Projeto
 
 Este aplicativo foi desenvolvido para simplificar o gerenciamento de notas pessoais, permitindo um controle rápido e eficaz através de uma interface fácil e moderna. O MyNotesApp oferece funcionalidades para criar, editar, excluir e visualizar notas, com suporte para organização e filtragem com  gerenciamento de usuários, permitindo que cada usuário tenha suas próprias notas.
@@ -54,39 +88,3 @@ manifests # Configurações do projeto.
    ```bash
    git clone https://github.com/caiquefirmino7/MyNotesApp.git
    
-
-
-### Capturas de Tela
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="screenshots/telainicialnota.png" width="150" alt="Tela Inicial Nota">
-    </td>
-    <td align="center">
-      <img src="screenshots/telausuario.png" width="150" alt="Tela Usuário">
-    </td>
-    <td align="center">
-      <img src="screenshots/telacadastro.png" width="150" alt="Tela Cadastro">
-    </td>
-    <td align="center">
-      <img src="screenshots/telacriarnota.png" width="150" alt="Tela Criar Nota">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="screenshots/teladetalhenota.png" width="150" alt="Tela Detalhe Nota">
-    </td>
-    <td align="center">
-      <img src="screenshots/telanota.png" width="150" alt="Tela Nota">
-    </td>
-    <td align="center">
-      <img src="screenshots/telanotaescolha.png" width="150" alt="Tela Nota Escolha">
-    </td>
-    <td align="center">
-      <img src="screenshots/telaperfil.png" width="150" alt="Tela Perfil">
-    </td>
-  </tr>
-</table>
-
-
