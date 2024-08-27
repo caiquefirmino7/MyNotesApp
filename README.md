@@ -61,16 +61,30 @@ manifests # Configurações do projeto.
 <table align="center">
   <tr>
     <td align="center">
-      <img src="app/src/main/res/assets/splashscreen.png" width="150" alt="Splash Screen">
+      <img src="screenshots/telainicialnota.png" width="150" alt="Tela Inicial Nota">
     </td>
     <td align="center">
-      <img src="app/src/main/res/assets/telainicial.jpeg" width="150" alt="Tela Inicial">
+      <img src="screenshots/telausuario.png" width="150" alt="Tela Usuário">
     </td>
     <td align="center">
-      <img src="app/src/main/res/assets/criarnota.jpeg" width="150" alt="Criar Nota">
+      <img src="screenshots/telacadastro.png" width="150" alt="Tela Cadastro">
     </td>
     <td align="center">
-      <img src="app/src/main/res/assets/notas.jpeg" width="150" alt="Notas">
+      <img src="screenshots/telacriarnota.png" width="150" alt="Tela Criar Nota">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/teladetalhenota.png" width="150" alt="Tela Detalhe Nota">
+    </td>
+    <td align="center">
+      <img src="screenshots/telanota.png" width="150" alt="Tela Nota">
+    </td>
+    <td align="center">
+      <img src="screenshots/telanotaescolha.png" width="150" alt="Tela Nota Escolha">
+    </td>
+    <td align="center">
+      <img src="screenshots/telaperfil.png" width="150" alt="Tela Perfil">
     </td>
   </tr>
 </table>
